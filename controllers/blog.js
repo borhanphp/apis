@@ -656,7 +656,7 @@ exports.all = async (req, res) => {
     .limit(limit)
     .skip(skip)
     .exec((err, blogs) => {
-r        if(err){
+        if(err){
             res.status(404).send({
                 message: err,
                 data: []
