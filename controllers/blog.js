@@ -14,7 +14,7 @@ const process = require('process');
 
 exports.create = (req, res) => {
     
-        const directory =  "/root/news/back/public/images";
+        const directory =  "./public/images";
         let form = new formidable.IncomingForm({
             uploadDir: directory,
             keepExtensions: true
@@ -439,7 +439,7 @@ exports.update = (req, res) => {
             });
         }
 
-        const directory =  "/root/news/back/public/images";
+        const directory =  "./public/images";
         let form = new formidable.IncomingForm({
             uploadDir: directory,
             keepExtensions: true
@@ -656,7 +656,7 @@ exports.all = async (req, res) => {
     .limit(limit)
     .skip(skip)
     .exec((err, blogs) => {
-        if(err){
+r        if(err){
             res.status(404).send({
                 message: err,
                 data: []
