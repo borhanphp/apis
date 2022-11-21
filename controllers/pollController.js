@@ -5,7 +5,7 @@ const { errorHandler } = require('../helpers/dbErrorHandler');
 const _ = require('lodash');
 
 exports.create = (req, res) => {
-    const directory =  "/root/news/back/public/images";
+    const directory =  "./public/images";
         let form = new formidable.IncomingForm({
             uploadDir: directory,
             keepExtensions: true
@@ -215,7 +215,7 @@ exports.update = (req, res) => {
 
 
 const Storage = multer.diskStorage({
-    destination:'/root/news/back/public/images',
+    destination:'./public/images',
     filename: (req, file, cb) => {
         cb(null, Date.now() + file.originalname);
     },
