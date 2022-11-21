@@ -17,7 +17,7 @@ function slugifi(text) {
 }
 
 exports.createPage = (req, res) => {
-    const directory =  "/root/news/back/public/images";
+    const directory =  "./public/images";
     let form = new formidable.IncomingForm({
         uploadDir: directory,
         keepExtensions: true
@@ -113,7 +113,7 @@ exports.update = (req, res) => {
             });
         }
 
-        const directory =  "/root/news/back/public/images";
+        const directory =  "./public/images";
         let form = new formidable.IncomingForm({
             uploadDir: directory,
             keepExtensions: true
