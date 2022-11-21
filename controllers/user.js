@@ -214,7 +214,7 @@ exports.deleteUser = (req, res) => {
 
 
 const Storage = multer.diskStorage({
-    destination:'/root/news/back/public/images',
+    destination:'/public/images',
     filename: (req, file, cb) => {
         cb(null, Date.now() + file.originalname);
     },
