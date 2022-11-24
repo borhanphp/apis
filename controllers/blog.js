@@ -100,16 +100,8 @@ exports.create = (req, res) => {
         blog.status = status;
         blog.featured = featured;
         blog.scrol = scrol;
-        // blog.photo = files.photo.newFilename;
-	     if (files.photo) {
-            if (files.photo.size > 10000000000) {
-                return res.status(400).json({
-                    error: 'Image should be less then 1mb in size'
-                });
-            }
-            blog.photo.data = fs.readFileSync(files.photo.filepath);
-            blog.photo.contentType = files.photo.type;
-        }
+        blog.photo = files.photo.newFilename;
+	
         // categories and tags
         let arrayOfCategories = categories && categories.split(',');
         let arrayOfSubcategories = subcategories && subcategories.split(',');
