@@ -32,8 +32,8 @@ const blogSchema = new mongoose.Schema(
             type: String
         },
         photo: {
-            
-            type: String,
+             data: Buffer,
+            contentType: String
         },
         categories: [{ type: ObjectId, ref: 'Category', required: true }],
         subcategories: [{ type: ObjectId, ref: 'Subcategory', required: false }],
