@@ -13,14 +13,7 @@ const { smartTrim } = require('../helpers/blog');
 const process = require('process');
 
 exports.create = (req, res) => {
-    
-        const directory =  "./public";
-        let form = new formidable.IncomingForm({
-            uploadDir: directory,
-            keepExtensions: true
-        
-    });
-    
+  let form = new formidable.IncomingForm();
     form.keepExtensions = true;
     form.multiples = true;
     form.parse(req, (err, fields, files) => {
@@ -107,15 +100,15 @@ exports.create = (req, res) => {
         let arrayOfSubcategories = subcategories && subcategories.split(',');
         let arrayOfTags = tags && tags.split(',');
 
-        // if (files.photo) {
-        //     if (files.photo.size > 10000000000) {
-        //         return res.status(400).json({
-        //             error: 'Image should be less then 1mb in size'
-        //         });
-        //     }
-        //     blog.photo.data = fs.readFileSync(files.photo.filepath);
-        //     blog.photo.contentType = files.photo.type;
-        // }
+        if (files.photo) {
+//             if (files.photo.size > 10000000000) {
+//                 return res.status(400).json({
+//                     error: 'Image should be less then 1mb in size'
+//                 });
+//             }
+            blog.photo.data = fs.readFileSync(files.photo.filepath);
+            blog.photo.contentType = files.photo.type;
+        }
 
         blog.save((err, result) => {
             if (err) {
