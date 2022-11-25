@@ -54,7 +54,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
 app.use(cookieParser());
-app.use(express.static("uploads"));
+// app.use(express.static("uploads"));
 
 //cors
 if(process.env.NODE_ENV === 'development'){
@@ -85,7 +85,7 @@ app.use('/api', replyRouter);
 
 // app.use(express.static(path.join(__dirname, '/public')))
 // app.use('/u/', express.static('public'));
-app.use('/images', express.static(path.join(__dirname, '/public/images')))
+app.use('/images', express.static(path.join(__dirname, '/public')))
 
 
 
