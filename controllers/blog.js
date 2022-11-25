@@ -14,7 +14,7 @@ const process = require('process');
 
 exports.create = (req, res) => {
     
-        const directory =  "./public/images";
+        const directory =  "./public";
         let form = new formidable.IncomingForm({
             uploadDir: directory,
             keepExtensions: true
@@ -440,7 +440,7 @@ exports.update = (req, res) => {
             });
         }
 
-        const directory =  "./public/images";
+        const directory =  "./public";
         let form = new formidable.IncomingForm({
             uploadDir: directory,
             keepExtensions: true
