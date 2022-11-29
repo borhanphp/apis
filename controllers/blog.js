@@ -499,7 +499,7 @@ exports.photo = (req, res) => {
                     error: errorHandler(err)
                 });
             }
-            // res.set('Content-Type', blog.photo.contentType);
+            res.set('Content-Type', blog.photo.contentType);
             return res.send(blog.photo);
         });
 };
